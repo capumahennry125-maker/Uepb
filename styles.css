@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f4f8; /* Fondo claro para resaltar el azul */
+  --clr: #002a61;    /* Azul Marino de la UEPB */
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+
+.card:hover {
+  width: 650px;
+}
+
+.card .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.card .circle::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 10px solid var(--clr);
+  transition: 0.5s, background 0.5s;
+  box-shadow: 0 0 30px rgba(0, 42, 97, 0.2);
+}
+
+.card:hover .circle::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--clr);
+}
+
+.card .circle .logo {
+  position: relative;
+  width: 200px;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.card:hover .circle .logo {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.card .product_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  height: 250px;
+  border-radius: 15px;
+  transition: 0.5s ease-in-out;
+  z-index: 3;
+}
+
+.card:hover .product_img {
+  left: 72%;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card .content {
+  position: absolute;
+  width: 45%;
+  left: 5%;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 4;
+}
+
+.card:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card .content h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.card .content p {
+  color: #fff;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.card .content a {
+  position: relative;
+  color: var(--clr);
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.card .content a:hover {
+  background: #87CEEB;
+  transform: scale(1.05);
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px; /* 👈 MÁS PEQUEÑO */
+  border: 4px solid transparent;
+  font-size: 14px; /* 👈 TEXTO MÁS PEQUEÑO */
+  background-color: #87CEEB;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #87CEEB;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 18px; /* 👈 ICONO MÁS PEQUEÑO */
+  fill: #ffffff;
+  z-index: 2;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 12px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 2;
+  transform: translateX(-8px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 12px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(8px);
+}
+
+.animated-button:hover svg {
+  fill: #87CEEB;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #87CEEB;
+}
+
+.animated-button:hover .circle {
+  width: 140px; /* 👈 AJUSTADO AL TAMAÑO */
+  height: 140px;
+  opacity: 1;
+}
